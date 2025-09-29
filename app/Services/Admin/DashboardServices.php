@@ -3,8 +3,6 @@
 namespace App\Services\Admin;
 
 use App\Models\Projects;
-use App\Models\ContactUs;
-use App\Models\Donor;
 use App\Models\OrderView;
 use App\Models\Store;
 use App\Models\Domain;
@@ -15,7 +13,7 @@ use Illuminate\Support\Facades\DB;
 
 class DashboardServices
 {
-    public  $orders, $ordersView, $projects, $donors, $contactUs, $storeApiService;
+    public  $orders, $ordersView, $projects,$storeApiService;
 
     public $currentMonth, $currentYear, $previousMonth, $previousYear;
 
@@ -26,8 +24,6 @@ class DashboardServices
 
         $this->orders = new OrderView();
         $this->projects = new Projects();
-        $this->donors = new Donor();
-        $this->contactUs = new ContactUs();
         $this->storeApiService = new StoreApiService();
 
         // get request filter 
@@ -72,40 +68,8 @@ class DashboardServices
         return $query->get();
     }
 
-    /**
-     * Get the count of donors.
-     */
-    public function donorCount()
-    {
-        $query = $this->donors;
 
-        if ($this->filter_start_date !== null) {
-            $query = $query->whereDate('created_at', '>=', $this->filter_start_date);
-        }
-        if ($this->filter_end_date !== null) {
-            $query = $query->whereDate('created_at', '<=', $this->filter_end_date);
-        }
-
-        return count($query->get());
-    }
-
-    /**
-     * Get the count of messages.
-     */
-    public function contactsCount()
-    {
-        $query = $this->contactUs;
-
-        if ($this->filter_start_date !== null) {
-            $query = $query->whereDate('created_at', '>=', $this->filter_start_date);
-        }
-        if ($this->filter_end_date !== null) {
-            $query = $query->whereDate('created_at', '<=', $this->filter_end_date);
-        }
-
-        return count($query->get());
-    }
-
+  
      /**
      * Get the count of project.
      */
@@ -220,22 +184,7 @@ class DashboardServices
     }
 
     /**
-     * Calculate the difference in total number of donors between the current and previous month.
-     */
-    function calculateDonorFromPreviousMounth()
-    {
-        $currentMonthDonor = $this->donors->forMonth($this->currentYear, $this->currentMonth)->count(); // Replace null with your model if using scope
-        $previousMonthDonor = $this->donors->forMonth($this->previousYear, $this->previousMonth)->count(); // Replace null with your model if using scope
-        $donorCountDifference = $currentMonthDonor - $previousMonthDonor;
-        return $donorCountDifference;
-        // dd( $donorCountDifference,  $currentMonthDonor ,  $previousMonthDonor, ($donorCountDifference / $previousMonthDonor));
-        if ($previousMonthDonor === 0) {
-            return 0; // Handle division by zero
-        } else {
-            $result = $previousMonthDonor > $currentMonthDonor ? '-' : '+';
-            return   abs(number_format((($donorCountDifference / $previousMonthDonor) * 100), 2)) . '%' . $result;
-        }
-    }
+
 
     /**
      * Generate a line chart for monthly orders donations.
@@ -330,29 +279,6 @@ class DashboardServices
     }
     // End get Data --------------------------------------------------------------------------------------------------
 
-    // Multi-Store Statistics Methods ------------------------------------------------------------
-
-    /**
-     * Get statistics from all stores via APIs
-     */
-    public function getMultiStoreStatistics()
-    {
-        return $this->storeApiService->fetchAllStoresStatistics(
-            $this->filter_start_date,
-            $this->filter_end_date
-        );
-    }
-
-    /**
-     * Get aggregated statistics from all stores
-     */
-    public function getAggregatedStoreStatistics()
-    {
-        return $this->storeApiService->getAggregatedStatistics(
-            $this->filter_start_date,
-            $this->filter_end_date
-        );
-    }
 
     /**
      * Get domains list for dropdown
@@ -379,9 +305,6 @@ class DashboardServices
         $data['orderCount'] = count($this->getOrder());
         $data['orderTotal'] = $this->getOrder()->sum('total');
         $data['lastMonthPercent'] = $this->calculateAmountFromPreviousMounth();
-        $data['donorCount'] = $this->donorCount();
-        $data['DonorMonth'] = $this->calculateDonorFromPreviousMounth();
-        $data['contactsCount'] = $this->contactsCount();
         $data['projectsCount'] = $this->projectsCount();
 
         // $data['donationsChart'] = $this->donationsChart();
@@ -392,8 +315,6 @@ class DashboardServices
         $data['orderStatusCount'] = $this->getStatusCountOrders();
         $data['orderSourceCount'] = $this->getSourceCountOrders();
 
-        // Multi-Store Statistics
-        $data['multiStoreStats'] = $this->getAggregatedStoreStatistics();
         $data['storesList'] = $this->getStoresList();
 
         $data['colors'] = ['success', 'danger', 'primary', 'warning'];
