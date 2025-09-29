@@ -1,0 +1,17 @@
+.pending_number {
+    position: absolute;
+    left: 10px;
+    top: 5px;
+    border-radius: 50%;
+    background: #E7E7E7;
+    height: 23px;
+    width: 26px;
+    color: #000;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.rm-ws{
+    white-space: unset !important;
+}

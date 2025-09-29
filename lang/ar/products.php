@@ -1,0 +1,70 @@
+<?php
+
+return [
+
+    /*
+    |--------------------------------------------------------------------------
+    | Admin Dashboard
+    |--------------------------------------------------------------------------
+    */
+    'products'                    => 'المنتجات',
+    'attributeSet'                => 'product Set',
+    'price'                       => 'السعر',
+    'vendor_price'                => 'سعر المتجر',
+    'quantity'                    => 'الكمية',
+    'sku'                         => 'SKU',
+    'start_at'                    => 'بدأ في',
+    'end_at'                      => 'انتهي في',
+    'is-variant'                  => 'Is Variant',
+
+    'edit'                        => 'تعديل منتج ":name" ',
+    'show'                        => 'عرض  منتج  ":name" ',
+    'show_product'                => 'Show product',
+    'create'                      => 'Create product',
+    'edit_product'                => 'Edit product',
+    'create_products'             => 'إنشاء منتج ',
+    'name_en'                     => 'Name in English',
+    'name_ar'                     => 'Name in Arabic',
+    'slug_en'                     => 'Slug in English',
+    'slug_ar'                     => 'Slug in Arabic',
+    'name'                        => 'Name',
+    'slug'                        => 'Slug',
+    'url'                         => 'Url',
+    'type'                        => 'Type',
+    'status'                      => 'الحالة',
+    'created_at'                  => 'تاريخ الأنشاء',
+    'updated_at'                  => 'Updated at',
+    'actions'                     => 'Actions',
+    'sort'                        => 'ترتيب',
+    'sale_price'                  => 'Price Sale',
+    'is_cheacked'                 => 'Allow Customer Checkout When This Product Out OF Stock',
+    'status_changed_sucessfully'  => 'Status Changed Sucessfully',
+    'delete_all_sucessfully'      => 'Articles Deleted Sucessfully',
+    'title'                       => 'الأسم',
+    'in_stock'                    => 'In Stock',
+    'out_stock'                   => 'Out Of Stock',
+    'stock'                       => 'Stock',
+    'show_products'               => 'عرض المنتجات',
+    'price_from'                  => 'السعر من ',
+    'price_to'                    => 'السعر الي ',
+    'quantity_from'               => 'الكميه من ',
+    'quantity_to'                 => 'الكميه الي',
+    'settings'                    => 'الإعدادات',
+    'addTime'                     => 'Add time',
+    'cancel'                      => 'Cancel',
+    'default'                     => 'Default',
+    'select_images'               => 'Select images',
+    'editAttributeSet'            => 'Edit attribute set',
+    'create_new_vairiance'        => 'create new vairiance',
+    'show_review'                 => 'Show All Reviews',
+    'stars'                       => 'stars',
+    'created_from'                => 'التاريخ من',
+    'created_to'                  => 'التاريخ الي',
+
+    'category'                    => 'المجال',
+    'categories'                  => 'اقسام المنتجات',
+    'createCategory'              => ' إنشاء مجال للمنتج',
+    'editCategory'                => 'تعديل مجال ":name"',
+    'showCategory'                => 'عرض مجال ":name" ',
+
+];

@@ -1,0 +1,513 @@
+/* Fast Pay Styles */
+.fast-pay {
+  position: fixed;
+  bottom: 20%;
+  right: 0;
+  z-index: 1000;
+  direction: rtl;
+  transition: transform 1s ease-in-out;
+}
+/* Fast Pay Styles */
+
+/* Custom Scrollbar Styles */
+.fast-pay ::-webkit-scrollbar {
+  width: 8px;
+  background: #f1f1f1;
+}
+
+.fast-pay ::-webkit-scrollbar-thumb {
+  background: #10353C;
+  border-radius: 8px;
+}
+
+.fast-pay ::-webkit-scrollbar-thumb:hover {
+  background: #10353C;
+}
+
+.fast-pay ::-webkit-scrollbar-track {
+  background: #e9f7f5;
+  border-radius: 8px;
+}
+
+.fast-pay .container {
+  background-color: #10353C;
+  color: white;
+  border-radius: 4px;
+  display: flex;
+  flex-flow: row-reverse;
+  align-items: center;
+  justify-content: end;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  overflow: hidden;
+  padding: 0;
+  width: 400px;
+  transform: translateX(200px);
+  overflow: hidden;
+  transition: all 1s ease;
+
+  .plus-btn {
+    position: relative;
+    font-size: 24px;
+    margin-right: 10px;
+    width: 40px;
+    font-weight: bold;
+    color: #10353C;
+    transition: transform 1s ease;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform .5s ease;
+  }
+  .plus-btn:hover {
+    transform: scale(1.4);
+  }
+
+  .white-layer {
+    position: absolute;
+    left: 0;
+    width: 40px;
+    border-radius: 4px 0 0 4px;
+    height: 100%;
+    background: #fff;
+    z-index: 1;
+  }
+
+  h6 {
+    width: 120px;
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    transition: transform 1s ease;
+  }
+}
+.fast-pay.expanded .white-layer {
+  border-radius: 4px 4px 0 0;
+}
+
+.fast-pay.expanded{
+  transform: translateY(-300px);
+}
+
+.fast-pay.expanded .container {
+  transform: translateX(0);
+  border-radius: 4px 4px 0 0;
+
+  h6 {
+    transform: translateX(100px);
+  }
+}
+
+.fast-pay.expanded .plus-btn {
+  transform: rotateZ(45deg);
+}
+
+.fast-pay .donation-form {
+  position: absolute;
+  opacity: 0;
+  transform: translateX(100%);
+  background: #f8f9fa;
+  transition: all .7s ease-in-out ;
+  width: 100%;
+  overflow: hidden auto;
+  padding: 15px;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  height: 300px;
+
+}
+
+.fast-pay.expanded .donation-form {
+  transform: translateX(0);
+  display: block;
+  opacity: 1;
+  width: 100%;
+  height: 300px;
+  max-height: 500px;
+  transition-delay: .5s;
+
+}
+
+.fast-pay .donation-form .form-title {
+  text-align: center;
+  margin: 10px 0 20px;
+  font-weight: bold;
+  color: #10353C;
+  font-size: 18px;
+  position: relative;
+}
+
+.fast-pay .donation-form .form-title::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  right: 50%;
+  transform: translateX(50%);
+  width: 50px;
+  height: 3px;
+  background-color: #10353C;
+  border-radius: 3px;
+}
+
+.fast-pay .donation-options {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.fast-pay .donation-option {
+  flex: 1;
+  text-align: center;
+  background-color: #f1f1f1;
+  border-radius: 8px;
+  padding: 6px 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  font-weight: 500;
+  color: #555;
+}
+
+.fast-pay .donation-option:hover {
+  background-color: #e9f7f5;
+  transform: translateY(-2px);
+}
+
+.fast-pay .donation-option.active {
+  background-color: #e9f7f5;
+  color: #10353C;
+  font-weight: bold;
+  border-color: #10353C;
+  box-shadow: 0 2px 8px rgba(53, 166, 151, 0.2);
+}
+.fast-pay label {
+  font-size: 16px;
+}
+
+.fast-pay .form-control {
+  width: 100%;
+  padding: 6px 15px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  background-color: white;
+  text-align: right;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.fast-pay .form-control:focus {
+  border-color: #10353C;
+  box-shadow: 0 0 0 3px rgba(53, 166, 151, 0.2);
+  outline: none;
+}
+
+.fast-pay .payment-methods {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  gap: 10px;
+  .img-container {
+    width: 100%;
+  }
+  p {
+    font-size: 14px;
+  }
+  img {
+    width: 80px;
+  }
+}
+
+.fast-pay .payment-method:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.fast-pay .payment-method.selected {
+  border-color: #10353C;
+  box-shadow: 0 5px 15px rgba(53, 166, 151, 0.2);
+}
+
+.fast-pay .payment-method img {
+  max-height: 30px;
+  max-width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.fast-pay .payment-method:hover img {
+  transform: scale(1.05);
+}
+
+.fast-pay-payment-row {
+  flex-flow: column;
+  justify-content: start;
+  align-items: flex-start;
+  padding: 0;
+  gap: 2px;
+}
+
+.fast-pay .project-select {
+  width: 100%;
+  padding: 6px 15px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  background-color: white;
+  text-align: right;
+  margin-bottom: 15px;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2335a697' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: left 15px center;
+  background-size: 15px;
+  transition: all 0.3s ease;
+}
+
+/* Add a submit button */
+.fast-pay .submit-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #10353C;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.fast-pay .submit-btn:hover {
+  background-color: #10353C;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(53, 166, 151, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .fast-pay .container {
+    width: 300px;
+    transform: translateX(250px);
+    .plus-btn{
+      width: 50px;
+    }
+    .white-layer{
+      width: 50px;
+    }
+  }
+
+  .fast-pay .donation-option {
+    margin-bottom: 8px;
+  }
+
+  .fast-pay .payment-methods {
+    flex-wrap: wrap;
+  }
+  .fast-pay .img-container {
+    gap: 1px;
+  }
+
+  .fast-pay .payment-method {
+    /* flex: 0 0 45%; */
+    margin-bottom: 10px;
+  }
+
+  .fast-pay .bank-form {
+    margin: 4px 1rem ;
+  }
+  .fast-pay label {
+    font-size: 14px;
+    margin: 0;
+  }
+  .fast-pay {
+    .tab-btn {
+      padding: 1px 0;
+      font-size: 15px;
+    }
+    input {
+      height: 25px;
+    }
+    .phone-input-wrapper input {
+      height: 10px;
+      background: #000;
+    }
+    .phone-input-wrapper input[type="text"],
+    .country-select {
+      height: 25px;
+    }
+    .img-container {
+      gap: 1px;
+      img {
+        width: 60px;
+      }
+    }
+    .payment-row {
+      flex-flow: column;
+      gap: 10px;
+      align-items: flex-start;
+    }
+    #ccv {
+      width: 130px;
+      height: 30px;
+    }
+
+    .payment-row input,
+    .exp-date-inputs {
+      height: 25px;
+    }
+    .proceed-text {
+      font-size: 1rem;
+      margin: 0 8px;
+    }
+    .pay-btn {
+      width: 100px;
+      height: 30px;
+    }
+    .cancel-btn {
+      width: 40px;
+      height: 30px;
+    }
+    .cart-form-policy {
+      font-size: 12px;
+    }
+    .attach-btn {
+      width: 100%;
+      font-size: 12px;
+      margin: 0;
+
+      span {
+        font-size: 8px !important;
+      }
+    }
+    #bank-name {
+      font-size: 12px;
+    }
+    .accept-code-form{
+      flex-flow: column;
+      align-items: flex-start;
+    }
+  }
+}
+
+/* Donation Amount Buttons with Different Colors */
+.fast-pay .donation-amounts {
+  margin-bottom: 20px;
+}
+
+/* Donation Amount Buttons with Different Colors */
+.fast-pay .amount-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.fast-pay .amount-btn {
+  flex: 1;
+  padding: 5px;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+}
+
+/* Different colors for each button */
+.fast-pay .amount-btn-1 {
+  background-color: var(--main-color); /* Bright green */
+}
+
+.fast-pay .amount-btn-2 {
+  background-color: var(--secondary-color); /* Teal-blue */
+}
+
+.fast-pay .amount-btn-3 {
+  background-color: var(--accent-color); /* Orange */
+}
+
+.fast-pay .amount-btn-4 {
+  background-color: var(--green-color); /* Dark teal */
+}
+/* Hover effects */
+.fast-pay .amount-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.fast-pay .amount-btn-1:hover {
+  background-color: #10353C;
+}
+
+.fast-pay .amount-btn-2:hover {
+  background-color: #a1c787;
+}
+
+.fast-pay .amount-btn-3:hover {
+  background-color: #e09e4f;
+}
+
+.fast-pay .amount-btn-4:hover {
+  background-color: #4a7571;
+}
+
+/* Active state */
+.fast-pay .amount-btn.active {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transform: translateY(-4px);
+  border: 2px solid #fff;
+  animation: pulse 1.5s infinite;
+}
+
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  }
+  50% {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  }
+  100% {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  }
+}
+
+@keyframes checkmark-appear {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Project selection styling */
+.fast-pay .project-selection-container {
+  margin-bottom: 15px;
+}
+
+.fast-pay .project-select:focus {
+  border-color: #10353C;
+  box-shadow: 0 0 0 3px rgba(53, 166, 151, 0.2);
+  outline: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .fast-pay .amount-buttons {
+    /* flex-direction: column; */
+  }
+
+  .fast-pay .amount-btn {
+    margin-bottom: 8px;
+    padding: 2px 0;
+  }
+  
+  
+}

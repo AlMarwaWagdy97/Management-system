@@ -1,0 +1,47 @@
+/* fonts.css - place in public/css or import in your main css */
+/* @font-face definitions using your uploaded TTF files */
+/* Map 4.TTF -> regular (400), 4_0.TTF -> 600, 4_1.TTF -> 700 */
+
+@font-face {
+  font-family: 'MyCustomArabic';
+  src: url('/fonts/4.TTF') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MyCustomArabic';
+  src: url('/fonts/4_0.TTF') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MyCustomArabic';
+  src: url('/fonts/4_1.TTF') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+html[lang="ar"], body[lang="ar"], body {
+  font-family: 'MyCustomArabic', system-ui, -apple-system, "Segoe UI",
+               Roboto, "Helvetica Neue", Arial, "Noto Naskh Arabic", sans-serif;
+  direction: rtl;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.fw-regular { font-weight: 400; }
+.fw-semibold { font-weight: 600; }
+.fw-bold { font-weight: 700; }
+
+
+@media print {
+  body {
+    font-family: 'MyCustomArabic', serif;
+  }
+}

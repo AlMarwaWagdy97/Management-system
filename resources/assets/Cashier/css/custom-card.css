@@ -1,0 +1,485 @@
+.RamdanProjectSwiper , .projectSwiper{
+  max-width: 1190px;
+}
+
+.custom-card {
+  font-family: 'MyCustomArabic' !important;
+  border-radius: 18px;
+  width: 380px;
+  height: fit-content;
+  margin: auto;
+  overflow: hidden;
+  display: flex;
+  flex-flow: column;
+  justify-content: start;
+  border: solid 1px #707070;
+
+  .value {
+    font-family: 'MyCustomArabic' !important;
+  }
+
+  .form-control {
+    padding: 1px 3px;
+
+  }
+
+  .form-control::placeholder {
+    font-size: 16px;
+  }
+}
+
+.custom-card-header-bg {
+  width: 100%;
+  background: #10353C;
+  border-radius: 18px 18px 0 0;
+  padding: 18px 24px 8px 24px;
+}
+
+.high-sales-projects .custom-card-header-bg {
+  background: var(--secondary-color);
+}
+
+.custom-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.category .custom-card-header {
+  justify-content: center;
+  text-align: center;
+}
+
+.custom-card i {
+  font-size: 1rem;
+}
+
+.custom-card-title {
+  color: #ffff;
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+.custom-card-icon {
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.custom-card-img-bg {
+  background: #fff;
+}
+
+.custom-card-img-el {
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+.custom-card-body-bg {
+  border-radius: 0 0 18px 18px;
+  padding: 18px;
+}
+
+.custom-card-body {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  border-radius: 0 0 18px 18px;
+  padding: 0 18px;
+  width: 100%;
+  height: 100%;
+}
+
+.custom-card-amount-row {
+  background: #efefef;
+  border-radius: 12px;
+  padding: 8px 14px;
+  display: flex;
+  font-size: 12px;
+  gap: 1rem;
+}
+
+.money-collected {
+  background: #efefef;
+  border-radius: 1rem;
+  margin: 10px 0;
+
+}
+
+.custom-card-progress {
+  height: 18;
+  background: #ffff;
+  border-radius: 12px;
+  width: 90%;
+  margin: auto;
+}
+
+.custom-card-progress-bar {
+  width: 50%;
+  background: #10353C;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 12px;
+}
+
+.amount-btn {
+  /* padding: 2px 4px; */
+  flex: 1;
+  margin: 0 2px;
+}
+
+.custom-card .amount-btn-500 {
+  max-width: 100px;
+  margin: auto;
+  background: var(--secondary-color);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  transition: background 0.2s, color 0.2s;
+}
+
+.amount-btn-500:hover {
+  background: var(--main-color);
+  color: #fff;
+}
+
+.amount-btn-100 {
+  background: var(--accent-color);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  transition: background 0.2s, color 0.2s;
+}
+
+.amount-btn-100:hover {
+  background: var(--main-color);
+  color: #fff;
+}
+
+.amount-btn-50 {
+  background: var(--green-color);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  transition: background 0.2s, color 0.2s;
+}
+
+.amount-btn-50:hover {
+  background: var(--main-color);
+  color: #fff;
+}
+
+.amount-btn {
+  span {
+    font-size: 10px;
+  }
+}
+
+.custom-card-donate-btn {
+  flex: 1;
+  background: var(--main-color);
+  border: none;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.custom-card-donate-btn:hover {
+  background: var(--secondary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.custom-card-input {
+  flex: 2;
+  font-size: 1.1rem;
+  max-width: 50%;
+  border-radius: 12px;
+  text-align: right;
+  position: relative;
+}
+
+.custom-card-input::placeholder {
+  text-align: right;
+}
+
+.custom-card-input::after {
+  content: 'رس';
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  font-size: 0.9rem;
+}
+
+.input-open-container {
+  width: 100%;
+}
+
+.open {
+  width: 100%;
+  margin: 5px 0;
+}
+
+.amount-btn.active-amount {
+  box-shadow: 0 0 0 2px var(--main-color);
+  border: 2px solid var(--main-color);
+  background: #fff;
+  color: var(--main-color);
+}
+
+.custom-card-action-row {
+  gap: 10px;
+
+  .form-control {
+    padding: 5px;
+
+  }
+
+}
+
+/* Mobile Ramadan Project Cards */
+@media screen and (max-width: 768px) {
+  .mobile-only.high-sales-projects .custom-card {
+    background-color: #E9E5DA;
+  }
+
+  .mobile-only .custom-card {
+    width: 100%;
+    height: 210px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-flow: column nowrap;
+    border: none;
+    background-color: #e3eef6;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+
+    .card-content {
+      display: flex;
+      flex-flow: row-reverse;
+      border: none;
+      width: 100%;
+
+
+    }
+
+    .custom-card-img-bg {
+      width: 100px;
+      height: 90px;
+      order: 2;
+      border-radius: 1rem;
+      margin: 1rem .5rem 1rem .5rem;
+    }
+
+    .custom-card-img-el {
+      height: 100%;
+      object-fit: cover;
+      border-radius: 0;
+      border-radius: 1rem;
+    }
+
+    .custom-card-body-bg {
+      width: 80%;
+      order: 1;
+      position: relative;
+      border-radius: 0;
+      margin: 0;
+    }
+
+    .custom-card-body {
+      margin: 0;
+      justify-content: start;
+    }
+
+    .custom-card-header-bg {
+      background: transparent;
+      padding: 10px 0 4px 0;
+      margin: 0;
+      width: auto;
+      border-radius: 0;
+    }
+
+    .custom-card-title {
+      font-size: 12px;
+      color: #000;
+      font-weight: 800;
+
+    }
+
+    .custom-card-icon {
+      display: none;
+    }
+
+
+
+    .money-collected {
+      background: transparent;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .custom-card-progress {
+      height: 12px;
+      background: #72727282;
+      border-radius: 10px;
+      width: 100%;
+      margin: 1rem auto;
+    }
+
+    .custom-card-progress-bar {
+      background-color: #22B573;
+      color: white;
+      text-align: center;
+      line-height: 15px;
+      font-size: 10px;
+      font-weight: bold;
+      border-radius: 10px;
+    }
+
+    .custom-card-amount-row {
+      background: transparent;
+      padding: 0;
+      display: flex;
+      justify-content: space-between;
+      font-size: 10px;
+      font-family: 'MyCustomArabic' !important;
+      margin-bottom: 10px;
+      color: #10353C;
+      white-space: nowrap;
+      text-align: right;
+
+      .value {
+        color: black;
+        font-weight: 800;
+      }
+    }
+
+    .custom-card-action-row {
+      gap: 5px;
+      width: 100%;
+      padding: 0 1rem;
+    }
+
+    .custom-card-donate-btn {
+      flex: 1;
+      background-color: #22B573;
+      border: none;
+      border-radius: 25px;
+      padding: 4px 5px;
+      color: white;
+      font-weight: 600;
+      font-size: 14px !important;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .custom-card-donate-btn:hover {
+      background-color: #1a8f5a;
+      transform: translateY(-2px);
+      box-shadow: 0 2px 8px rgba(34, 181, 115, 0.3);
+    }
+
+    .custom-card-input {
+      flex: 1;
+      background-color: white;
+      border: 1px solid #d0d0d0;
+      border-radius: 25px;
+      padding: 4px 5px;
+      color: #999;
+      font-weight: 500;
+      font-size: 14px !important;
+      text-align: right;
+      max-width: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .custom-card-input::before {
+      content: "مبلغ التبرع";
+      display: inline-block;
+      margin-right: 5px;
+    }
+
+    .custom-card-input::after {
+      content: "رس";
+      display: inline-block;
+      margin-left: 5px;
+      color: #999;
+      font-size: 12px;
+      background: #000;
+      z-index: 2;
+    }
+
+    .custom-card-input .donation-text {
+      margin: 0 auto 0 5px;
+    }
+
+    .custom-card-input .currency {
+      color: #999;
+      font-size: 12px;
+      margin-right: auto;
+    }
+
+    /* Hide amount buttons on mobile */
+    /* .amount-btn-500, .amount-btn-100, .amount-btn-50 {
+    display: none;
+  } */
+
+    /* Add shopping cart icon to donate button */
+    .custom-card i {
+      font-size: 16px;
+    }
+
+  }
+}
+
+@media screen and (max-width: 1450px) {
+  .custom-card-action-row .form-control {
+    padding: 3px;
+  }
+
+  .category {
+
+
+    .custom-card {
+      width: 290px;
+    }
+
+    .custom-card-input {
+      flex: 1;
+    }
+
+    .amount-btn {
+      font-size: 14px !important;
+
+      span {
+        font-size: 9px;
+      }
+    }
+
+    .custom-card-progress-bar {
+      font-size: 10px;
+    }
+
+    button {
+      font-size: 14px !important;
+    }
+
+    i {
+      font-size: 10px;
+    }
+  }
+
+}

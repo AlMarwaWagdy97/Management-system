@@ -1,0 +1,22 @@
+<?php
+return [
+    'orders'                     =>  'Orders',
+    'order_show'                 =>  'Show Order',
+    'orders_show'                =>  'Show Orders',
+    'edit'                       =>  'Edit in ":name" Orders',
+    'show'                       =>  'Show ":name" Orders',
+    'identifier'                 =>'identifier',
+    'price'                      =>'price',
+    'total'                      =>'total',
+    'name'                       =>'name',
+    'mobile'                     =>'mobile',
+    'email'                      =>'Email',
+    'projects'                   =>'projects',
+    'payment_methods'            =>'payment methods',
+    'gifts'                      =>'gifts',
+    'bank_transfer'              =>' Bank transfer',
+    'source'                     =>'source',
+    'payment_configration'       =>'payment confirmation',
+    'price_from'                 =>'Price From',
+    'price_to'                   =>'Price To',
+];

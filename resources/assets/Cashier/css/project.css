@@ -1,0 +1,1198 @@
+/* General Styles */
+body {
+  font-family: 'MyCustomArabic' !important;
+  color: #41555b;
+  margin: 0;
+  padding: 0;
+}
+
+.project-page {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+
+/* Project Header */
+.project-header {
+  max-width: 1000px;
+  height: 200px;
+  width: 80%;
+  display: flex;
+  flex-flow: row-reverse;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto 60px auto;
+  border-radius: 12px;
+  .project-header-content{
+    color: #009174;
+    font-size: 35px;
+    font-weight: 700;
+    line-height: 68px;
+    display: flex;
+    margin: 0 1rem;
+    align-items: center;
+    justify-content: start;
+  }
+}
+.head-img-container{
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding: 1rem;
+  flex: 1 1;
+  height: 100%;
+  img{
+    width: 100%;
+    height: 100%;
+    min-width: 120px;
+  }
+}
+
+@media screen and (max-width: 1250px)  {
+  .project-header .project-header-content{
+    font-size:24px ;
+  }
+}
+
+
+
+.project-category {
+  margin-bottom: 15px;
+}
+
+.project-title-main {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+
+.stat-summary-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--secondary-color);
+  font-weight: 500;
+}
+
+.stat-summary-item i {
+  color: var(--main-color);
+  font-size: 18px;
+}
+
+.water-btn {
+  background-color: #527D89;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 20px;
+  font-weight: bold;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.water-btn:hover {
+  background-color: #008e78;
+}
+
+/* Project Content Layout */
+.project-content {
+  display: flex;
+  flex-flow: row-reverse;
+  gap: 20px;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Card Styles - Common */
+.donation-card,
+.project-card {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  width: 100%;
+  position: relative;
+}
+.inputs-container{
+  display: flex;
+  gap: 2px;
+}
+
+/* Donation Card */
+.donation-card {
+  flex: 1;
+  
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  border: solid #336776 1px;
+}
+
+.hadith-text {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+/* Donation Amounts */
+.donation-amounts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+  justify-content: center;
+}
+
+.amount-btn {
+  min-width: 80px;
+  padding: 12px 20px;
+  border-radius: 50px !important;
+  border: none !important;
+  color: #fff !important;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  background-color: #36a2eb !important; /* Default color */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Ensure background colors are always visible */
+.amount-btn[style*="background-color:"],
+.amount-btn[style*="background-color:"]:hover,
+.amount-btn[style*="background-color:"]:active {
+    background-color: inherit !important;
+    opacity: 1 !important;
+}
+
+.amount-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.amount-btn.active {
+    border: 2px solid #fff !important;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+}
+
+.amount-btn .price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.amount-btn .price span {
+    color: #fff !important;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+/* Fix for buttons with inline styles */
+.amount-btn[style*="background-color"] {
+    background-color: inherit !important;
+}
+
+/* Make sure the color is visible on all states */
+.amount-btn,
+.amount-btn:focus,
+.amount-btn:active {
+    background-color: inherit !important;
+    color: #fff !important;
+}
+
+/* Custom Amount Input */
+.custom-amount {
+  display: flex;
+  width: 100%;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.amount-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  text-align: right;
+}
+
+/* Gift Option */
+.gift-option {
+  display: flex;
+  flex-flow: row-reverse;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.gift-icon {
+  color: #22b573;
+  font-size: 18px;
+}
+
+.gift-text {
+  flex: 1;
+  font-size: 14px;
+}
+
+/* Toggle Switch */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 20px;
+}
+
+.toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .toggle-slider {
+  background-color: #22b573;
+}
+
+input:checked + .toggle-slider:before {
+  transform: translateX(20px);
+}
+
+/* Card Selection */
+.card-selection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-title {
+  font-size: 16px;
+  font-weight: 500;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.card-carousel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.card-options {
+  display: flex;
+  gap: 10px;
+}
+
+.card-option {
+  width: 70px;
+  height: 100px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  position: relative;
+}
+
+.card-option.selected {
+  background-color: #d6f3f0;
+  border: 2px solid #22b573;
+}
+
+.card-option.selected i {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  color: #22b573;
+  font-size: 14px;
+}
+
+.nav-btn {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: #666;
+  cursor: pointer;
+}
+
+.preview-link {
+  color: #22b573;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.preview-link:hover {
+  text-decoration: underline;
+}
+
+/* Recipient Info */
+.recipient-info {
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-flow: column;
+  align-items: start;
+}
+
+.form-group label {
+  font-size: 14px;
+}
+
+.form-input {
+  flex: 1;
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.phone-input-group {
+  display: flex;
+  flex: 1;
+  gap: 5px;
+}
+
+.country-code {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: #f0f0f0;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.form-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+
+/* Donation Actions */
+.donation-actions {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.total-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 8px;
+  color: #666;
+  font-size: 16px;
+  cursor: not-allowed;
+}
+
+.checkout-btn {
+  width: 100%;
+  padding: 5px 10px;
+  background-color: #22b573;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.checkout-btn:hover {
+  background-color: #1a9c63;
+}
+
+.cart-icon {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: #22b573;
+  font-size: 10px;
+}
+
+/* Project Card */
+.project-card {
+  position: relative;
+  padding-top: 30px;
+  margin: auto;
+}
+
+.project-title {
+  color: white;
+  padding: 8px 20px;
+  border-radius: 8px 8px 0 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+.project-details{
+  width: 100%;
+  padding: 1rem;
+}
+
+.share-btn {
+  position: absolute;
+  left: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #f0f0f0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--secondary-color);
+  cursor: pointer;
+  z-index: 1;
+  i {
+    font-size: 2rem;
+  }
+}
+
+.project-image {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.custom-card-progress {
+  height: 18;
+  background: #ffff;
+  border-radius: 12px;
+  width: 90%;
+  margin: auto;
+}
+.custom-card-progress-bar {
+  width: 50%;
+  background: #219a8a;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 12px;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .project-header {
+    margin: 0 auto 0 auto;
+    white-space: nowrap;
+
+    height: fit-content;
+    .project-header-content{
+      font-size: 16px;
+      line-height: 40px;
+  }
+.head-img-container{
+  max-width: 100px;
+  min-width: 80px;
+ 
+}
+  .project-content {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .donation-card,
+  .project-card {
+    max-width: 100%;
+    height: fit-content;
+  }
+}
+}
+
+@media (max-width: 576px) {
+  .project-header {
+    height: fit-content;
+    width: 100%;
+    margin: 1rem auto ;
+    .project-header-content{
+    font-size: 10px;
+    line-height: 20px;
+
+
+  }
+  .head-img-container{
+    display: flex;
+    padding: 1rem 0;
+    display: none;
+  }
+ 
+}
+  .inputs-container{
+    flex-flow: column;
+  }
+  .donation-amounts {
+    flex-wrap: wrap;
+  }
+
+
+  .form-group {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .form-group label {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  .phone-input-group {
+    width: 100%;
+  }
+
+  .hadith-text {
+    font-size: 12px;
+  }
+
+  .project-title {
+    font-size: 12px;
+    padding: 6px 15px;
+  }
+  .share-btn {
+    top: 10px;
+    left: 10px;
+    width: 30px;
+    height: 30px;
+    i {
+      font-size: 1.3rem;
+    }
+  }
+  .project-page .money-collected{
+    margin: .5rem !important;
+    padding: .2rem 0 !important;
+  }
+  .project-page .money-collected span , .donation-amount-btn span{
+    font-size: 10px !important;
+  }
+  
+}
+/* Project Page Styles */
+
+
+.donation-amounts {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.amount-btn {
+  flex: 1;
+  padding: 8px 0;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.accent {
+  background: var(--accent-color);
+}
+
+.blue {
+  background: var(--main-color);
+}
+
+.green {
+  background: var(--green-color);
+}
+
+.secondary {
+  background: var(--secondary-color);
+}
+
+.custom-amount {
+  display: flex;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.amount-input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  text-align: right;
+}
+
+.amount-input::placeholder {
+  color: #999;
+}
+
+
+
+.currency {
+  padding: 10px;
+  color: #666;
+  border-right: 1px solid #ddd;
+}
+
+.gift-option {
+  display: flex;
+  align-items: center;
+  padding: 5px 0;
+}
+
+.gift-icon {
+  margin-left: 10px;
+  color: #527D89;
+}
+
+
+
+.gift-checkbox {
+  margin-right: 0.5rem;
+  cursor: pointer;
+  transform: scale(1.5);
+
+}
+
+.gift-label {
+  cursor: pointer;
+  font-weight: 500;
+  color: #336776;
+}
+
+.gift-container {
+  margin-top: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  transition: all 0.3s ease;
+}
+
+.gift-header {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.gift-header h4 {
+  color: #336776;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.gift-form .form-group label {
+  color: #41555b;
+  font-weight: 500;
+}
+
+.gift-form .form-control {
+  border-radius: 8px;
+  border: 1px solid #d1e3e0;
+  padding: 10px 15px;
+}
+
+.gift-form .form-control:focus {
+  border-color: #35a697;
+  box-shadow: 0 0 0 0.2rem rgba(53, 166, 151, 0.25);
+}
+
+.gift-form .form-check-input:checked {
+  background-color: #35a697;
+  border-color: #35a697;
+}
+
+.gift-btn {
+  background-color: #35a697;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 20px;
+  color: white;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.gift-btn:hover {
+  background-color: #2a8a7d;
+}
+
+.complete-order-btn {
+  background-color: #527D89;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.complete-order-btn i {
+  font-size: 16px;
+}
+
+/* Project Card Styles */
+.project-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  flex: 1.5;
+  overflow: hidden;
+}
+
+.project-header-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--secondary-color);
+  color: white;
+  height: 5rem;
+}
+
+.project-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.project-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.project-page .money-collected {
+  margin: 1rem;
+  padding: 1rem 0;
+  .custom-card-amount-row {
+    width: 90%;
+    margin: auto;
+  }
+  span {
+    font-size: 1rem;
+  }
+}
+/* Statistics Section */
+.statistics-section {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  margin: 24px auto;
+}
+
+.stat-item {
+  flex: 1;
+  display: flex;
+  flex-flow: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+  color: #527D89;
+  background: transparent;
+  border: solid 1px;
+  border-radius: 1rem;
+}
+
+.stat-icon {
+  width: 50px;
+  height: 50px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 15px;
+}
+
+.stat-icon i {
+  font-size: 20px;
+  color: white;
+}
+
+.stat-content {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  font-size: 33px;
+  font-weight: 400;
+}
+
+.stat-title {
+  color: #388C8C;
+  margin-bottom: 5px;
+}
+
+.stat-value {
+  color: #333;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .project-header-container{
+    height: 4rem;
+  }
+  .project-content {
+    flex-direction: column-reverse;
+
+  }
+  
+  .project-title-main {
+    font-size: 24px;
+  }
+  
+  .project-stats-summary {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .stat-item {
+    width: 100%;
+    .stat-title{
+      font-size: 16px;
+    }
+    .stat-icon{
+      width: 35px;
+      height: 35px;
+    }
+  }
+}
+
+/* Checkout container and buttons */
+.checkout-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+}
+
+.cart-icon-btn {
+  background-color: #fff;
+  border: 1px solid #527D89;
+  color: #527D89;
+  border-radius: 5px;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cart-icon-btn:hover {
+  background-color: #527D89;
+  color: #fff;
+}
+
+.cart-icon-btn i {
+  font-size: 18px;
+}
+
+/* Gift Donation Section Styles */
+.gift-donation-section {
+  margin-bottom: 20px;
+}
+
+.donation-label {
+  font-size: 16px;
+  font-weight: 500;
+  color: #336776;
+  margin-bottom: 10px;
+}
+
+.donation-amount-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.donation-amount-btn {
+  min-width: 50px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.donation-amount-btn:not(.active):hover {
+  background-color: #e9f7f5;
+  border-color: #35a697;
+  color: #333;
+}
+
+.donation-amount-btn.active,.amount-btn.active {
+  border: 2px solid #333;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(53, 166, 151, 0.4);
+  position: relative;
+  font-weight: bold;
+}
+.stat-content{
+  white-space: nowrap;
+}
+
+
+
+.other-amount-input .form-control {
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  padding: 10px 15px;
+  font-size: 14px;
+}
+
+.other-amount-input .form-control:focus {
+  border-color: #35a697;
+  box-shadow: 0 0 0 0.2rem rgba(53, 166, 151, 0.25);
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .container{
+    padding-bottom: 0;
+  }
+  .project-page {
+    width: 100%;
+  }
+  .project-card,
+  .donation-card.content {
+    width: 100%;
+    margin: auto;
+  }
+  .donation-amounts span {
+    font-size: 4px;
+  }
+
+  .donation-amounts {
+    gap: 1px;
+  }
+  .donation-amount-btn {
+    flex: 1;
+    padding: 2px 4px;
+    width: 10px !important;
+
+  }
+  .gift-text{
+    font-size: 14px;
+    margin-left: 10px;
+  }
+  .statistics-section{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3.5rem;
+    gap: 2rem;
+  }
+}
+
+/* Gift Category Styles */
+.gift-category-wrapper {
+  position: relative;
+}
+
+.gift-category-select {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  border: 1px solid #d1e3e0;
+  background-color: #fff;
+  color: #333;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+}
+
+.gift-category-select:focus {
+  border-color: #35a697;
+  box-shadow: 0 0 0 0.2rem rgba(53, 166, 151, 0.25);
+  outline: none;
+}
+
+/* Gift Cards Styles */
+.gift-cards-container {
+  margin: 15px 0;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  border: 1px solid #e0e0e0;
+}
+
+.gift-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.gift-card {
+  position: relative;
+}
+
+.gift-card-input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.gift-card-label {
+  display: block;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.gift-card-label img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+}
+
+.gift-card-input:checked + .gift-card-label {
+  border-color: #35a697;
+  box-shadow: 0 0 10px rgba(53, 166, 151, 0.3);
+}
+
+.gift-card-input:focus + .gift-card-label {
+  outline: 2px solid rgba(53, 166, 151, 0.5);
+}
+
+/* Selected category button style */
+.selected-category {
+  display: inline-block;
+  background-color: #e6f7f4;
+  color: #35a697;
+  border: 1px solid #35a697;
+  border-radius: 20px;
+  padding: 6px 15px;
+  margin-top: 10px;
+  font-size: 14px;
+  position: relative;
+}
+
+.selected-category .close-btn {
+  margin-right: 8px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .gift-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media screen and (max-width: 420px) {
+  .gift-text{
+    font-size: 12px;
+  }
+  
+}
+
+/* Additional Gift Form Styles */
+.gift-separator {
+  margin: 20px 0;
+}
+
+.gift-separator hr {
+  border-color: #d1e3e0;
+  margin-bottom: 15px;
+}
+
+.gift-header-with-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.gift-header-with-actions h4 {
+  color: #336776;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.remove-gift-btn {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.remove-gift-btn:hover {
+  background-color: #f5c6cb;
+}
+
+.additional-gift-container {
+  margin-top: 30px;
+  border-top: 1px dashed #d1e3e0;
+}

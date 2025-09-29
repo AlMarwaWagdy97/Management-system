@@ -1,0 +1,1 @@
+<span class="pending_number">{{ $pendingNumber }}</span>

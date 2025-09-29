@@ -1,0 +1,1 @@
+        <x-site.home.category />

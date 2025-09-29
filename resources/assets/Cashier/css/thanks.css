@@ -1,0 +1,129 @@
+.thanks-container {
+  max-width: 1400px;
+  margin: 3rem auto 5rem auto;
+  padding: 0 1rem;
+
+}
+.thanks-content{
+    background: #fafafa;
+    padding: 2rem 3rem;
+
+}   
+
+
+.success-icon-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.success-icon {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.success-icon svg {
+  width: 60px;
+  height: 60px;
+}
+
+.thanks-message {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.thanks-message h2 {
+  font-family: 'MyCustomArabic' !important;
+  color: var(--accent-color);
+  font-size: 67px;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.thanks-text {
+  font-family: 'MyCustomArabic' !important;
+    text-align: center;
+  line-height: 60px;
+  font-size: 20px;
+  font-weight: 400;
+  color: #000000;
+  margin-bottom: 3rem;
+}
+
+.donation-record-btn {
+  display: block;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  background-color: #F79E1B;
+  color: white;
+  border: none;
+  border-radius: 80px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease , transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+}
+
+.donation-record-btn:hover {
+  background-color: var(--accent-color);
+  transform:translateY(-4px) scale(1.02);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .thanks-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .thanks-message h2 {
+    font-size: 2rem;
+  }
+
+  .success-icon {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 576px) {
+  .thanks-container {
+    margin: 2rem auto 3rem;
+  }
+  .thanks-content{
+    padding: 1rem;
+  }
+
+
+  .thanks-message h2 {
+    font-size: 1.4rem;
+  }
+  .thanks-text {
+    font-size: 14px;
+    line-height: 40px;
+  }
+
+  .success-icon {
+    width: 100px;
+    height: 100px;
+  }
+
+  .success-icon svg {
+    width: 50px;
+    height: 50px;
+  }
+  .donation-record-btn {
+    height: 40px;
+    font-size: 1rem;
+  }
+}

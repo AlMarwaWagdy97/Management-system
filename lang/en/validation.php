@@ -1,0 +1,296 @@
+<?php
+
+return [
+
+    /*
+    |--------------------------------------------------------------------------
+    | Validation Language Lines
+    |--------------------------------------------------------------------------
+    |
+    | The following language lines contain the default error messages used by
+    | the validator class. Some of these rules have multiple versions such
+    | as the size rules. Feel free to tweak each of these messages here.
+    |
+    */
+
+    'accepted' => 'The :attribute must be accepted.',
+    'accepted_if' => 'The :attribute must be accepted when :other is :value.',
+    'active_url' => 'The :attribute is not a valid URL.',
+    'after' => 'The :attribute must be a date after :date.',
+    'after_or_equal' => 'The :attribute must be a date after or equal to :date.',
+    'alpha' => 'The :attribute must only contain letters.',
+    'alpha_dash' => 'The :attribute must only contain letters, numbers, dashes and underscores.',
+    'alpha_num' => 'The :attribute must only contain letters and numbers.',
+    'array' => 'The :attribute must be an array.',
+    'before' => 'The :attribute must be a date before :date.',
+    'before_or_equal' => 'The :attribute must be a date before or equal to :date.',
+    'between' => [
+        'array' => 'The :attribute must have between :min and :max items.',
+        'file' => 'The :attribute must be between :min and :max kilobytes.',
+        'numeric' => 'The :attribute must be between :min and :max.',
+        'string' => 'The :attribute must be between :min and :max characters.',
+    ],
+    'boolean' => 'The :attribute field must be true or false.',
+    'confirmed' => 'The :attribute confirmation does not match.',
+    'current_password' => 'The password is incorrect.',
+    'date' => 'The :attribute is not a valid date.',
+    'date_equals' => 'The :attribute must be a date equal to :date.',
+    'date_format' => 'The :attribute does not match the format :format.',
+    'declined' => 'The :attribute must be declined.',
+    'declined_if' => 'The :attribute must be declined when :other is :value.',
+    'different' => 'The :attribute and :other must be different.',
+    'digits' => 'The :attribute must be :digits digits.',
+    'digits_between' => 'The :attribute must be between :min and :max digits.',
+    'dimensions' => 'The :attribute has invalid image dimensions.',
+    'distinct' => 'The :attribute field has a duplicate value.',
+    'doesnt_end_with' => 'The :attribute may not end with one of the following: :values.',
+    'doesnt_start_with' => 'The :attribute may not start with one of the following: :values.',
+    'email' => 'The :attribute must be a valid email address.',
+    'ends_with' => 'The :attribute must end with one of the following: :values.',
+    'enum' => 'The selected :attribute is invalid.',
+    'exists' => 'The selected :attribute is invalid.',
+    'file' => 'The :attribute must be a file.',
+    'filled' => 'The :attribute field must have a value.',
+    'gt' => [
+        'array' => 'The :attribute must have more than :value items.',
+        'file' => 'The :attribute must be greater than :value kilobytes.',
+        'numeric' => 'The :attribute must be greater than :value.',
+        'string' => 'The :attribute must be greater than :value characters.',
+    ],
+    'gte' => [
+        'array' => 'The :attribute must have :value items or more.',
+        'file' => 'The :attribute must be greater than or equal to :value kilobytes.',
+        'numeric' => 'The :attribute must be greater than or equal to :value.',
+        'string' => 'The :attribute must be greater than or equal to :value characters.',
+    ],
+    'image' => 'The :attribute must be an image.',
+    'in' => 'The selected :attribute is invalid.',
+    'in_array' => 'The :attribute field does not exist in :other.',
+    'integer' => 'The :attribute must be an integer.',
+    'ip' => 'The :attribute must be a valid IP address.',
+    'ipv4' => 'The :attribute must be a valid IPv4 address.',
+    'ipv6' => 'The :attribute must be a valid IPv6 address.',
+    'json' => 'The :attribute must be a valid JSON string.',
+    'lt' => [
+        'array' => 'The :attribute must have less than :value items.',
+        'file' => 'The :attribute must be less than :value kilobytes.',
+        'numeric' => 'The :attribute must be less than :value.',
+        'string' => 'The :attribute must be less than :value characters.',
+    ],
+    'lte' => [
+        'array' => 'The :attribute must not have more than :value items.',
+        'file' => 'The :attribute must be less than or equal to :value kilobytes.',
+        'numeric' => 'The :attribute must be less than or equal to :value.',
+        'string' => 'The :attribute must be less than or equal to :value characters.',
+    ],
+    'mac_address' => 'The :attribute must be a valid MAC address.',
+    'max' => [
+        'array' => 'The :attribute must not have more than :max items.',
+        'file' => 'The :attribute must not be greater than :max kilobytes.',
+        'numeric' => 'The :attribute must not be greater than :max.',
+        'string' => 'The :attribute must not be greater than :max characters.',
+    ],
+    'max_digits' => 'The :attribute must not have more than :max digits.',
+    'mimes' => 'The :attribute must be a file of type: :values.',
+    'mimetypes' => 'The :attribute must be a file of type: :values.',
+    'min' => [
+        'array' => 'The :attribute must have at least :min items.',
+        'file' => 'The :attribute must be at least :min kilobytes.',
+        'numeric' => 'The :attribute must be at least :min.',
+        'string' => 'The :attribute must be at least :min characters.',
+    ],
+    'min_digits' => 'The :attribute must have at least :min digits.',
+    'multiple_of' => 'The :attribute must be a multiple of :value.',
+    'not_in' => 'The selected :attribute is invalid.',
+    'not_regex' => 'The :attribute format is invalid.',
+    'numeric' => 'The :attribute must be a number.',
+    'password' => [
+        'letters' => 'The :attribute must contain at least one letter.',
+        'mixed' => 'The :attribute must contain at least one uppercase and one lowercase letter.',
+        'numbers' => 'The :attribute must contain at least one number.',
+        'symbols' => 'The :attribute must contain at least one symbol.',
+        'uncompromised' => 'The given :attribute has appeared in a data leak. Please choose a different :attribute.',
+    ],
+    'present' => 'The :attribute field must be present.',
+    'prohibited' => 'The :attribute field is prohibited.',
+    'prohibited_if' => 'The :attribute field is prohibited when :other is :value.',
+    'prohibited_unless' => 'The :attribute field is prohibited unless :other is in :values.',
+    'prohibits' => 'The :attribute field prohibits :other from being present.',
+    'regex' => 'The :attribute format is invalid.',
+    'required' => 'The :attribute field is required.',
+    'required_array_keys' => 'The :attribute field must contain entries for: :values.',
+    'required_if' => 'The :attribute field is required when :other is :value.',
+    'required_if_accepted' => 'The :attribute field is required when :other is accepted.',
+    'required_unless' => 'The :attribute field is required unless :other is in :values.',
+    'required_with' => 'The :attribute field is required when :values is present.',
+    'required_with_all' => 'The :attribute field is required when :values are present.',
+    'required_without' => 'The :attribute field is required when :values is not present.',
+    'required_without_all' => 'The :attribute field is required when none of :values are present.',
+    'same' => 'The :attribute and :other must match.',
+    'size' => [
+        'array' => 'The :attribute must contain :size items.',
+        'file' => 'The :attribute must be :size kilobytes.',
+        'numeric' => 'The :attribute must be :size.',
+        'string' => 'The :attribute must be :size characters.',
+    ],
+    'starts_with' => 'The :attribute must start with one of the following: :values.',
+    'string' => 'The :attribute must be a string.',
+    'timezone' => 'The :attribute must be a valid timezone.',
+    'unique' => 'The :attribute has already been taken.',
+    'uploaded' => 'The :attribute failed to upload.',
+    'url' => 'The :attribute must be a valid URL.',
+    'uuid' => 'The :attribute must be a valid UUID.',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Custom Validation Language Lines
+    |--------------------------------------------------------------------------
+    |
+    | Here you may specify custom validation messages for attributes using the
+    | convention "attribute.rule" to name the lines. This makes it quick to
+    | specify a specific custom language line for a given attribute rule.
+    |
+    */
+
+    'custom' => [
+        'attribute-name' => [
+            'rule-name' => 'custom-message',
+        ],
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Custom Validation Attributes
+    |--------------------------------------------------------------------------
+    |
+    | The following language lines are used to swap our attribute placeholder
+    | with something more reader friendly such as "E-Mail Address" instead
+    | of "email". This simply helps us make our message more expressive.
+    |
+    */
+
+    'attributes' => [
+        'title'                 => 'title',
+        'slug'                  => 'slug',
+        'description'           => 'description',
+        'content'               => 'content',
+        'meta_title'            => 'meta title',
+        'meta_description'      => 'meta description',
+        'meta_key'              => 'meta key',
+        'en.title'              => 'title in English',
+        'ar.title'              => 'title in Arabic',
+        'en.slug'               => 'slug in English',
+        'ar.slug'               => 'slug in Arabic',
+        'en.description'        => 'description in English',
+        'ar.description'        => 'description in Arabic',
+        'en.content'            => 'content in English',
+        'ar.content'            => 'content in Arabic',
+        'en.meta_title'         => 'meta title in English',
+        'ar.meta_title'         => 'meta title in Arabic',
+        'en.meta_description'   => 'meta description in English',
+        'ar.meta_description'   => 'meta description in Arabic',
+        'en.meta_key'           => 'meta key in English',
+        'ar.meta_key'           => 'meta key in Arabic',
+        'en.unit_price'         => 'unit price in English',
+        'ar.unit_price'         => 'unit price in Arabic',
+        'unit_price'            => 'unit_price',
+        'number'                => 'number',
+        'beneficiary'           => 'beneficiary',
+        'category_id'           => 'category id',
+        'image'                 => 'image',
+        'images'                => 'images',
+        'cover_image'           => 'cover image',
+        'background_image'      => 'background image',
+        'background_color'      => 'background color',
+        'sort'                  => 'sort',
+        'feature'               => 'feature',
+        'news_ticker'           => 'news ticker',
+        'start_date'            => 'start date',
+        'end_date'              => 'end date',
+        'status'                => 'status',
+        'type'                  => 'type',
+        'extrafieldsvalues'     => 'extra fields values',
+        'donation_type'         => 'donation type',
+        'target_price'          => 'target price',
+        'target_unit'           => 'target unit',
+        'fake_target'           => 'fake target',
+        'payment_method'        => 'payment method',
+        'deceased_id'           => 'deceased id',
+        'share_name'            => 'share name',
+        'share_value'           => 'share value',
+        'fixed_value'           => 'fixed value',
+        'donation_name'         => 'donation name',
+        'donation_value'        => 'donation value',
+        'tags'                  => 'tags',
+        'tag_id'                => 'tag',
+        'project_types'         => 'project types',
+        'is_searchable'         => 'is searchable',
+        'display_layout'        => 'display layout',
+        'attribute_set_id'      => 'attribute set ',
+        'parent_id'             => 'parent ',
+        'project_types'         => 'project types',
+        'full_name'             => 'full name',
+        'email'                 => 'email',
+        'password'              => 'password',
+        'mobile'                => 'mobile',
+        'mobile_confirm'        => 'mobile confirm',
+        'whatsapp'              => 'whatsapp',
+        'addressList'           => 'address List',
+        'old_id'                => 'old',
+        'old'                   => 'old',
+        'url'                   => 'url',
+        'position'              => 'position',
+        'dynamic_table'         => 'dynamic table',
+        'dynamic_url'           => 'dynamic url',
+        'level'                 => 'level',
+        'bcakground_image'      => 'bcakground image',
+        'sku'                   => 'sku',
+        'quantity'              => 'quantity',
+        'price'                 => 'price',
+        'start_at'              => 'start at',
+        'end_at'                => 'end_at',
+        'is_variance'           => 'is variance',
+        'is_cheacked'           => 'is cheacked',
+        'vendor_id'             => 'vendor id',
+        'sale_price'            => 'sale price',
+        'cover_image'           => 'cover image',
+        'attributes'            => 'attributes',
+        'portfolio_id'          => 'portfolio',
+        'project_id'            => 'project',
+        'proof'                 => 'proof',
+        'permissions'           => 'permissions',
+        'employee_name'         => 'employee name',
+        'employee_number'       => 'employee number',
+        'employee_image'        => 'employee image',
+        'department'            => 'department',
+        'ax_store_number'       => 'ax store number',
+        'jop'                   => 'jop',
+        'location'              => 'location',
+        'roles'                 => 'roles',
+        'logo'                  => 'logo',
+        'responsible_person'    => 'responsible person',
+        'nationality'           => 'nationality',
+        'gender'                => 'gender',
+        'amount'                => 'amount',
+        'giver_name'            => 'giver name',
+        'giver_mobile'          => 'giver mobile',
+        'giver_email'           => 'giver Email',
+        'giver_address'         => 'giver address',
+        'donation_amt'          => 'Donation amount',
+        'selectedCard'          => 'Gift card',
+        'money'                 => 'money',
+        'zakatGold_gm'           => 'zakat Gold gm',
+        'zakatGold_amount'       => 'zakat Gold Amount',
+        'zakatSilver_gm'         => 'zakat Silver gm',
+        'zakatSilver_amount'     => 'zakat Silver Amount',
+        'zakatInvestment_gm'     => 'zakat Investment gm',
+        'zakatInvestment_amount' => 'zakat Investment Amount',
+        'account_id'             => 'Account',
+
+
+
+    ],
+
+
+
+];

@@ -1,0 +1,22 @@
+<?php
+return [
+    'orders'                     => 'التبرعات',
+    'order_show'                 => 'عرض التبرع',
+    'orders_show'                => 'عرض التبرعات',
+    'edit'                       => 'تعديل',
+    'show'                       => 'عرض',
+    'identifier'                 => 'معرف التبرع',
+    'price'                      => 'السعر',
+    'total'                      =>'الاجمالي',
+    'name'                       => 'الأسم',
+    'mobile'                     => 'الموبيل',
+    'email'                      => 'البريد الأكتروني',
+    'projects'                   => 'المشاريع',
+    'payment_methods'            => 'وسيله التبرع',
+    'gifts'                      => 'الاهداء',
+    'bank_transfer'              => 'الأيصال',
+    'source'                     => 'المصدر',
+    'payment_configration'       => 'تأكيد التحويل',
+    'price_from'                 =>'القيمة من',
+    'price_to'                     =>'القيمة الي',
+];

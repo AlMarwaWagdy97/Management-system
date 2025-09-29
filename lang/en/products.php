@@ -1,0 +1,70 @@
+<?php
+
+return [
+
+    /*
+    |--------------------------------------------------------------------------
+    | Admin Dashboard
+    |--------------------------------------------------------------------------
+    */
+    'products'                    => 'products',
+    'attributeSet'                => 'product Set',
+    'price'                       => 'Price',
+    'vendor_price'                => 'Vendor price',
+    'quantity'                    => 'Quantity',
+    'sku'                         => 'SKU',
+    'start_at'                    => 'Start at',
+    'end_at'                      => 'End At',
+    'is-variant'                  => 'Is Variant',
+
+    'edit'                        => 'Edit in ":name" product',
+    'show'                        => 'Show ":name" product',
+    'show_product'                => 'Show product',
+    'create'                      => 'Create product',
+    'edit_product'                => 'Edit product',
+    'create_products'             => 'Create New products',
+    'name_en'                     => 'Name in English',
+    'name_ar'                     => 'Name in Arabic',
+    'slug_en'                     => 'Slug in English',
+    'slug_ar'                     => 'Slug in Arabic',
+    'name'                        => 'Name',
+    'slug'                        => 'Slug',
+    'url'                         => 'Url',
+    'type'                        => 'Type',
+    'status'                      => 'Status',
+    'created_at'                  => 'Created at',
+    'updated_at'                  => 'Updated at',
+    'actions'                     => 'Actions',
+    'sort'                        => 'Sort',
+    'sale_price'                  => 'Price Sale',
+    'is_cheacked'                 => 'Allow Customer Checkout When This Product Out OF Stock',
+    'status_changed_sucessfully'  => 'Status Changed Sucessfully',
+    'delete_all_sucessfully'      => 'Articles Deleted Sucessfully',
+    'title'                       => 'Title',
+    'in_stock'                    => 'In Stock',
+    'out_stock'                   => 'Out Of Stock',
+    'stock'                       => 'Stock',
+    'show_products'               => 'All Products',
+    'price_from'                  => 'Price From',
+    'price_to'                    => 'Price To',
+    'quantity_from'               => 'Quantity from',
+    'quantity_to'                 => 'Quantity To',
+    'settings'                    => 'Settings',
+    'addTime'                     => 'Add time',
+    'cancel'                      => 'Cancel',
+    'default'                     => 'Default',
+    'select_images'               => 'Select images',
+    'editAttributeSet'            => 'Edit attribute set',
+    'create_new_vairiance'        => 'create new vairiance',
+    'show_review'                 => 'Show All Reviews',
+    'stars'                       => 'stars',
+    'created_from'                => 'Created From',
+    'created_to'                  => 'Created To',
+
+
+    'category'                    => 'Category',
+    'categories'                  => 'Categories',
+    'createCategory'              => 'create Product Category',
+    'editCategory'                => 'Edit in ":name" product category',
+    'showCategory'                => 'Show in ":name" product category',
+];

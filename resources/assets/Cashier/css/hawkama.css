@@ -1,0 +1,187 @@
+/* Governance (Hawkama) Page Styles */
+.hawkama-container {
+  max-width: 1800px;
+  margin: 3rem auto 1rem auto;
+  padding: 0 1.5rem;
+  font-family: 'MyCustomArabic' !important;
+  color: #666666;
+  background-color: #fff;
+  border-radius: 12px;
+}
+
+.hawkama-content {
+  padding: 2rem;
+}
+
+/* Logo Section */
+.logo-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 2rem auto 0 auto;
+  border-radius: 10px;
+  max-height: 300px;
+  justify-content: center;
+}
+
+.logo-section img {
+    width: 100%;
+  max-width: 250px;
+}
+
+.governance-sections {
+  border: solid #457581 1px;
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+/* Governance Sections */
+.governance-section {
+  margin-bottom: 2.5rem;
+}
+
+.section-title {
+  color: #336776;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.policies-title,
+.regulations-title,
+.reports-title {
+  color: #f45c21;
+}
+
+/* Lists */
+.governance-importance,
+.policies-list,
+.regulations-list,
+.reports-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.governance-importance li {
+  position: relative;
+  padding-right: 1.5rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.6rem;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 45px;
+  letter-spacing: 0%;
+  text-align: right;
+  color: #666666;
+}
+
+.governance-importance li:before {
+  content: "•";
+  font-weight: bold;
+  font-size: 1.2rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/* Policy Links */
+.policy-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.2rem;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: 400;
+  color: #666666;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.policy-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.download-arrow {
+  color: #000;
+  margin-right: auto;
+  transform: rotate(125deg);
+  margin-right: 16px;
+  transition: transform 0.2s ease;
+}
+
+.policy-link:hover .download-arrow {
+  transform: translateY(3px) rotate(90deg);
+}
+
+.policy-link:hover {
+  background-color: #f0f0f0;
+  transform: translateX(-5px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.policy-link img {
+  width: 15px;
+  height: 100%;
+  margin: 0 8px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .logo-section {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hawkama-container {
+    margin: 2rem auto;
+  }
+
+  .logo-section {
+    min-height: auto;
+  }
+
+  .logo-section img {
+    max-width: 150px;
+  }
+
+  .organization-name {
+    font-size: 1.3rem;
+  }
+
+  .section-title {
+    font-size: 1.3rem;
+  }
+  .policy-link {
+    font-size: 16px;
+    padding: 0.8rem 0;
+  }
+  .governance-importance li {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 576px) {
+  .hawkama-content {
+    padding: 1.5rem 0;
+  }
+  .governance-importance li{
+    font-size: 14px;
+    line-height: 1.4;
+    margin: 16px 0;
+  }
+
+  .policy-link {
+    font-size: 8px;
+    padding: 0.6rem 0;
+    font-size: 0.9rem;
+  }
+}

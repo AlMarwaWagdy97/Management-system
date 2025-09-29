@@ -1,0 +1,210 @@
+/* Main Checkout Layout */
+.checkout-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding:  1rem 1rem 3rem 1rem;
+  font-family: 'MyCustomArabic' !important;
+}
+
+.checkout-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background: #FAFAFA;
+}
+
+@media (min-width: 992px) {
+  
+  .checkout-content {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: start;
+  }
+  
+  .cart-container {
+    min-height: 900px;
+    flex: 1;
+  
+  }
+  
+  .cart-form {
+    flex: 1;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  .total-label{
+    font-size:1rem !important;
+  }
+}
+
+/* Cart Title */
+
+
+/* Donation Items */
+.donation-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.donation-item {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid #f0f0f0;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.donation-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.donation-item-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.donation-item-img-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 2;
+  min-width: 250px;
+}
+
+.donation-item-img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #eaeaea;
+}
+
+.donation-item-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #015263;
+  margin: 0;
+}
+
+.donation-item-quantity, 
+.donation-item-amount {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #666;
+  font-size: 1rem;
+  flex: 1;
+  justify-content: center;
+  min-width: 100px;
+}
+
+.quantity-label, 
+.amount-label {
+  color: #888;
+}
+
+.quantity-value, 
+.amount-value {
+  font-weight: 600;
+  color: #015263;
+}
+
+.donation-item-price {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--secondary-color);
+  flex: 1;
+  text-align: left;
+  min-width: 100px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.price-value::after {
+  content: " SAR";
+  font-size: 0.8rem;
+  color: #888;
+  margin-right: 0.25rem;
+}
+
+/* Total Section */
+.donation-total {
+  background-color: #f8f8f8;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #eaeaea;
+}
+
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.total-label {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #015263;
+}
+
+.total-amount {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #015263;
+  display: flex;
+  align-items: center;
+}
+
+.total-value {
+  margin-left: 0.5rem;
+}
+
+.total-currency {
+  font-size: 1rem;
+  color: #666;
+  margin-right: 0.5rem;
+}
+
+/* Donate Button */
+.donate-now-btn {
+  display: block;
+  width: 100%;
+  padding:.5rem 1rem;
+  background-color: #F79E1B;
+  color: #fff;
+  border: none;
+  border-radius: 80px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(247, 164, 28, 0.2);
+}
+
+.donate-now-btn:hover {
+  background-color: #e8940d;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(247, 164, 28, 0.3);
+}
+
+.donate-now-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(247, 164, 28, 0.2);
+}
+
+/* Form Styles */
+
+
+

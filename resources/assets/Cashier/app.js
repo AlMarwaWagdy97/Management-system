@@ -1,0 +1,13 @@
+import './js/bootstrap.bundle.min.js';
+import './js/swiper-bundle.js';
+import './js/wow.min.js';
+import './js/main.js';
+import './js/cart.js';
+import './js/project.js';
+// import './js/fast-pay.js';
+import './js/main.js';
+// import './js/registration.js';
+import './js/login.js';
+// import './js/checkout.js';
+import './js/profile.js';
+// import './js/thanks.js';

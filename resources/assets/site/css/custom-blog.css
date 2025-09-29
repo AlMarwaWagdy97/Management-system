@@ -1,0 +1,101 @@
+/* Custom blog styles extracted from inline and page-specific CSS */
+
+.blog-card-detail-section {
+    padding: 80px 0;
+}
+
+.blog-item {
+    margin-bottom: 60px;
+}
+
+.blog-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #4a2c6e;
+}
+
+.blog-category {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #764ba2;
+    margin-top: 20px; /* Added spacing between main label and category */
+}
+
+.blog-category a {
+    color: #764ba2;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.blog-category a:hover {
+    border-bottom: 1px solid #764ba2;
+}
+
+.blog-excerpt {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+.category-link {
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.category-link:hover {
+    color: #28a745; /* green color on hover */
+    font-size: 1.1rem;
+}
+
+/* New styles for clickable category images with frame */
+.image-wrapper img {
+    transition: transform 0.3s ease;
+    border-radius: 20px;
+}
+
+a:hover .image-wrapper img {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.moving-frame {
+    background-color: var(--green-color);
+    border-radius: 20px;
+    padding: 20px;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.moving-frame::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, rgba(255,255,255,0.15), rgba(255,255,255,0.3), rgba(255,255,255,0.15));
+    animation: moveFrame 3s linear infinite;
+    border-radius: 20px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes moveFrame {
+    0% {
+        transform: rotate(0deg) translate(0, 0);
+    }
+    100% {
+        transform: rotate(360deg) translate(0, 0);
+    }
+}
+
+/* Spacing between blog cards */
+.blog-card-detail-section .card {
+    margin-bottom: 40px;
+}

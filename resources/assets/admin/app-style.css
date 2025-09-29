@@ -1,0 +1,17 @@
+@import './css/select2.css';
+@import  './plugins/vectormap/jquery-jvectormap-2.0.2.css';
+@import  './plugins/simplebar/css/simplebar.css';
+@import  './plugins/input-tags/css/tagsinput.css';
+@import  './plugins/perfect-scrollbar/css/perfect-scrollbar.css';
+@import  './plugins/metismenu/css/metisMenu.min.css';
+@import  './plugins/chartjs/css/morris.css';
+@import  './css/pace.min.css';
+@import  './css/bootstrap.min.css';
+@import  './css/bootstrap-extended.css';
+@import  './css/app.css';
+@import  './css/icons.css';
+@import  './css/dark-theme.css';
+@import  './css/semi-dark.css';
+@import './css/spectrum.css';
+@import  './css/header-colors.css';
+@import  './css/custom.css';
