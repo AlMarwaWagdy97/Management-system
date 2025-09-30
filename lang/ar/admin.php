@@ -233,7 +233,6 @@ return [
     'orders'                    => 'التبرعات',
     'hide'                      => 'اخفاء',
     'fast_donation'             => 'الدفع السريع',
-    'cashier_system'            => 'نظام الكاشير',
     'price'                     => 'السعر',
     'pending'                   => 'معلق',
     'published'                 => 'مؤكد',

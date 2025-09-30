@@ -17,11 +17,6 @@
                         <a class="nav-link" href="javascript:;"><i class='bx bx-search'></i>
                         </a>
                     </li>
-                    <li class="nav-item d-none d-sm-flex">
-                        <a class="nav-link" href="{{ route('site.home') }}" target="_blank">
-                            <i class='bx bx-show'></i>
-                        </a>
-                    </li>
                     <li class="nav-item dropdown dropdown-laungauge d-none d-sm-flex">
                         
                         <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="javascript:;" data-bs-toggle="dropdown">
@@ -215,7 +210,6 @@
                     </li>
                     <li><a class="dropdown-item d-flex align-items-center" href="{{ route('admin.home') }}"><i class="bx bx-home-circle fs-5"></i><span>@lang('admin.dashboard')</span></a>
                     </li>
-                    <li><a class="dropdown-item d-flex align-items-center" href="{{ route('site.home') }}" target="_blank"><i class="bx bx-home-heart fs-5"></i><span>@lang('admin.site')</span></a>
                     </li>
                     <li>
                         <div class="dropdown-divider mb-0"></div>

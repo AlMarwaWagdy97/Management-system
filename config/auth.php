@@ -52,10 +52,7 @@ return [
             'driver' => 'session',
             'provider' => 'donors',
         ],
-        'cashier' => [
-            'driver'   => 'session',
-            'provider' => 'accounts',
-        ],
+       
     ],
 
     /*
@@ -90,10 +87,7 @@ return [
 
             'model' => App\Models\Donor::class,
         ],
-        'cashiers' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\Cashier::class,
-        ],
+    
 
 
         // 'users' => [

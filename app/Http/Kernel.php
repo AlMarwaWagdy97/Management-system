@@ -82,9 +82,6 @@ class Kernel extends HttpKernel
         
         'CheckPermissionRoute' => \App\Http\Middleware\CheckPermissionRoute::class,
 
-        'CheckStoreCookies' => \App\Http\Middleware\CheckStoreCookies::class,
-        
-
         'localize'                => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRoutes::class,
         'localizationRedirect'    => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRedirectFilter::class,
         'localeSessionRedirect'   => \Mcamara\LaravelLocalization\Middleware\LocaleSessionRedirect::class,

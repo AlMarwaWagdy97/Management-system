@@ -248,7 +248,6 @@ return [
     'process'                               => 'Process',
     'hide'                                  => 'hide',
     'fast_donation'                         => 'Fast Donation',
-    'cashier_system'                        => 'Cashier System',
     'price'                                 => 'Price',
     'pending'                               => 'Pending',
     'published'                             => 'published',

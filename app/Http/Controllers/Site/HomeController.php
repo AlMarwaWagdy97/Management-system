@@ -12,15 +12,5 @@ use Illuminate\Support\Facades\Cookie;
 
 class HomeController extends Controller
 {
-    public function index()
-    {
-        
-        $cookieValue = Cookie::get('cart');
-        if(!$cookieValue){
-            $token = Str::random(32); // Adjust the length as needed
-            $cookieValue = Cookie::queue('cart', $token, 60 * 24 * 365);
-        }
-        
-        return view('site.pages.index');
-    }
+
 }

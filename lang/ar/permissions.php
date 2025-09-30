@@ -782,7 +782,6 @@ return [
         'blogs_update_featured' => '  تحديث المدونات المميزه ',
         'blogs_actions' => '  اجراءات المدونات ',
         'charity_refers_supervisor' => 'المشرفيين',
-        'cashier_dashboard' => '--',
         'settings_settings_volunteer' => '--',
 
     ],

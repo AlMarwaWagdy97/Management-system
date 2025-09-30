@@ -3,7 +3,6 @@
 namespace App\Http\Livewire\Site\Home;
 
 use Livewire\Component;
-use App\Models\CategoryProjects;
 use App\Charity\Settings\SettingSingleton;
 
 class Tabs extends Component
@@ -22,8 +21,6 @@ class Tabs extends Component
         // define color categories
         $settings = SettingSingleton::getInstance();
         $this->colors = $settings->getColor('categoryColorlist');
-        // define categories
-        $this->categories =  CategoryProjects::active()->feature()//->normal()->descesd()
         ->whereNull('parent_id')->with(['trans' => function($query){
             $query->where('locale', app()->getLocale());
         }])->get();

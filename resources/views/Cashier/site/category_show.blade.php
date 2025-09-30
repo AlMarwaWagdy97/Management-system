@@ -1,1 +1,0 @@
-@include('site.pages.category.show')

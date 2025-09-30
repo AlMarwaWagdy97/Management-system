@@ -37,10 +37,6 @@ class Accounts extends Authenticatable
         return $this->belongsTo(Donor::class, 'id', 'account_id');
         
     }
-    public function cashier()
-{
-    return $this->hasOne(\App\Models\Cashier::class, 'account_id', 'id');
-}
     public function vendor()
     {
         return $this->belongsTo(Vendor::class, 'id', 'account_id');

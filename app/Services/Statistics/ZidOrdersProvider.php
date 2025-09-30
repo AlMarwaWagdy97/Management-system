@@ -12,7 +12,21 @@ class ZidOrdersProvider implements StoreOrdersProviderInterface
     public function fetch(Domain $domain, ?CarbonInterface $from, ?CarbonInterface $to): Collection
     {
         // Placeholder implementation: adjust endpoint/params according to Zid API spec
-        $endpoint = rtrim((string) $domain->domain_url, '/').'/api/orders/statistics';
+        // Normalize domain URL (remove spaces, ensure scheme)
+        $raw = (string) ($domain->domain_url ?: $domain->domain_name);
+        $raw = preg_replace('/\s+/', '', trim($raw));
+        if ($raw !== '' && !preg_match('~^https?://~i', $raw)) { $raw = 'https://' . $raw; }
+        $parts = @parse_url($raw);
+        if ($parts && !empty($parts['host'])) {
+            $scheme = $parts['scheme'] ?? 'https';
+            $host = preg_replace('/\s+/', '', $parts['host']);
+            $port = isset($parts['port']) ? (':' . $parts['port']) : '';
+            $path = $parts['path'] ?? '';
+            $base = rtrim($scheme . '://' . $host . $port . $path, '/');
+        } else {
+            $base = '';
+        }
+        $endpoint = $base . '/api/orders/statistics';
         $params = [];
         if ($from) { $params['from'] = $from->toDateString(); }
         if ($to)   { $params['to']   = $to->toDateString(); }

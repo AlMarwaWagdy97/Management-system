@@ -122,35 +122,35 @@ class StoreApiService
     /**
      * Get aggregated statistics for all stores
      */
-    public function getAggregatedStatistics($startDate = null, $endDate = null)
-    {
-        $query = StoreStatistics::query();
+    // public function getAggregatedStatistics($startDate = null, $endDate = null)
+    // {
+    //     $query = StoreStatistics::query();
 
-        if ($startDate) {
-            $query->where('statistics_date', '>=', $startDate);
-        }
-        if ($endDate) {
-            $query->where('statistics_date', '<=', $endDate);
-        }
+    //     if ($startDate) {
+    //         $query->where('statistics_date', '>=', $startDate);
+    //     }
+    //     if ($endDate) {
+    //         $query->where('statistics_date', '<=', $endDate);
+    //     }
 
-        $statistics = $query->get();
+    //     $statistics = $query->get();
 
-        // Group by store and aggregate
-        $grouped = $statistics->groupBy('store_id')->map(function ($items) {
-            return [
-                'store_name' => optional($items->last())->store_name,
-                'orders_count' => $items->sum('orders_count'),
-                'orders_total' => $items->sum('orders_total'),
-            ];
-        });
+    //     // Group by store and aggregate
+    //     $grouped = $statistics->groupBy('store_id')->map(function ($items) {
+    //         return [
+    //             'store_name' => optional($items->last())->store_name,
+    //             'orders_count' => $items->sum('orders_count'),
+    //             'orders_total' => $items->sum('orders_total'),
+    //         ];
+    //     });
 
-        return [
-            'total_orders' => $grouped->sum('orders_count'),
-            'total_amount' => $grouped->sum('orders_total'),
-            'stores_count' => $grouped->count(), // count distinct stores
-            'stores_details' => $grouped->values(),
-        ];
-    }
+    //     return [
+    //         'total_orders' => $grouped->sum('orders_count'),
+    //         'total_amount' => $grouped->sum('orders_total'),
+    //         'stores_count' => $grouped->count(), // count distinct stores
+    //         'stores_details' => $grouped->values(),
+    //     ];
+    // }
 
     /**
      * Get statistics for a specific store
