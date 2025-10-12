@@ -38,8 +38,8 @@
                     </div>
                     <div class="col-md-2 mt-1">
                         <div class="form-check mt-4">
-                            <input class="form-check-input" type="checkbox" id="onlyCompleted" name="only_completed" value="1" {{ !empty($onlyCompleted) ? 'checked' : '' }}>
-                            <label class="form-check-label" for="onlyCompleted">طلبات مكتملة فقط</label>
+                            <input class="form-check-input" type="checkbox" id="onlyCompleted" checked disabled>
+                            <label class="form-check-label" for="onlyCompleted">يتم عرض الطلبات المكتملة فقط</label>
                         </div>
                     </div>
                     <div class="search-input col-md-2 mt-1 d-flex gap-1 align-items-end">

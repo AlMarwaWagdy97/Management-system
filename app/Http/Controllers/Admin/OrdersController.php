@@ -20,6 +20,7 @@ class OrdersController extends Controller
         $ordersCount = null;
         $totalAmount = null;
         $currency = null;
+        $onlyCompletedEffective = true;
 
         if ($selectedDomainId) {
             try {
@@ -27,43 +28,70 @@ class OrdersController extends Controller
                 $base = rtrim($domain->domain_url ?: config('app.url'), '/');
                 $endpoint = $base.'/api/management/orders';
 
-                // Forward optional date filters
                 $params = [];
                 if ($request->filled('date_from')) { $params['date_from'] = $request->input('date_from'); }
                 if ($request->filled('date_to'))   { $params['date_to']   = $request->input('date_to'); }
 
-                // Pull ALL orders by iterating pagination on the remote API
                 $all = [];
                 $page = 1;
-                $perPage = 100; // conservative high page size
+                $perPage = 50;
                 $lastPage = null;
+
+                $requestPage = function(array $query) use ($endpoint, $domain) {
+                    $maxAttempts = 5;
+                    $attempt = 0;
+                    $backoff = 1; 
+                    do {
+                        $attempt++;
+                        $response = Http::withToken($domain->token)->acceptJson()->get($endpoint, $query);
+                        if ($response->status() === 429) {
+                            $retryAfter = (int) $response->header('Retry-After', $backoff);
+                            \Log::warning('[Admin Orders] 429 rate limited. Sleeping', [
+                                'attempt' => $attempt,
+                                'retry_after' => $retryAfter,
+                                'query' => $query,
+                            ]);
+                            sleep(max(1, $retryAfter));
+                            $backoff = min($backoff * 2, 30);
+                            continue;
+                        }
+                        if ($response->serverError()) {
+                            \Log::warning('[Admin Orders] server error, retrying', [
+                                'status' => $response->status(),
+                                'attempt' => $attempt,
+                                'query' => $query,
+                            ]);
+                            sleep($backoff);
+                            $backoff = min($backoff * 2, 30);
+                            continue;
+                        }
+                        return $response; 
+                    } while ($attempt < $maxAttempts);
+                    return $response;
+                };
 
                 do {
                     $q = array_merge($params, ['page' => $page, 'per_page' => $perPage]);
-                    $response = Http::withToken($domain->token)->acceptJson()->get($endpoint, $q);
+                    $response = $requestPage($q);
                     if ($response->failed()) {
                         throw new \RuntimeException('Orders API error: '.$response->status());
                     }
 
                     $json = $response->json();
 
-                    // Response can be either { success, data: { data: [...], pagination: {...} } } or simple array/list
                     $payload = [];
                     $pagination = null;
 
                     if (is_array($json)) {
                         if (array_key_exists('data', $json) && is_array($json['data'])) {
-                            // Try nested data structure
                             $dataNode = $json['data'];
                             if (array_key_exists('data', $dataNode) && is_array($dataNode['data'])) {
                                 $payload = $dataNode['data'];
                                 $pagination = $dataNode['pagination'] ?? null;
                             } else {
-                                // Sometimes data is the list itself
                                 $payload = $dataNode;
                             }
                         } else {
-                            // Fallback to entire json as list
                             $payload = $json;
                         }
                     }
@@ -77,14 +105,46 @@ class OrdersController extends Controller
                         $lastPage = (int) ($pagination['last_page'] ?? $current);
                         $page = $current + 1;
                     } else {
-                        // If no pagination meta returned, stop after first fetch
-                        $lastPage = $page; // ensure loop ends
+                        $lastPage = $page; 
                     }
 
                 } while ($lastPage !== null && $page <= $lastPage);
 
-                // Normalize and compute stats
-                $orders = collect($all)->values();
+                
+                $isCompleted = function($row): bool {
+                    $r = is_array($row) ? $row : (array) $row;
+                    $val = static function($k) use ($r) {
+                        $v = $r[$k] ?? null;
+                        if (is_string($v)) { return strtolower(trim($v)); }
+                        if (is_bool($v))   { return $v ? '1' : '0'; }
+                        if (is_numeric($v)) { return (string) ((int) $v); }
+                        return $v;
+                    };
+
+                    $status = (string) ($val('status') ?? '');
+                    $payStatus = (string) ($val('payment_status') ?? '');
+                    $donStatus = (string) ($val('donation_status') ?? '');
+                    $isPaidFlag = $val('is_paid');
+
+                    $completedKeywords = ['completed','complete','paid','done','success','successful','finished'];
+
+                    $in = function($value) use ($completedKeywords) {
+                        if (!is_string($value)) return false;
+                        foreach ($completedKeywords as $k) {
+                            if ($value === $k) return true;
+                        }
+                        return false;
+                    };
+
+                    if ($in($status) || $in($payStatus) || $in($donStatus)) { return true; }
+                    if ($isPaidFlag === '1' || $isPaidFlag === 1 || $isPaidFlag === true) { return true; }
+
+                    return false;
+                };
+
+                $filtered = array_values(array_filter($all, $isCompleted));
+
+                $orders = collect($filtered)->values();
                 $ordersCount = $orders->count();
                 $totalAmount = $orders->reduce(function($carry, $row){
                     $r = is_array($row) ? $row : (array) $row;
@@ -94,9 +154,8 @@ class OrdersController extends Controller
                 $first = (array) (($orders[0] ?? []) ?: []);
                 $currency = $first['currency'] ?? null;
 
-                // Export CSV if requested
                 if (strtolower((string) $request->input('export')) === 'csv') {
-                    $filename = 'orders_'.date('Ymd_His').'.csv';
+                    $filename = 'orders_completed_'.date('Ymd_His').'.csv';
                     $headers = [
                         'Content-Type'        => 'text/csv; charset=UTF-8',
                         'Content-Disposition' => 'attachment; filename="'.$filename.'"',
@@ -104,10 +163,8 @@ class OrdersController extends Controller
 
                     return response()->streamDownload(function() use ($orders) {
                         $out = fopen('php://output', 'w');
-                        // UTF-8 BOM for Excel compatibility
                         fwrite($out, chr(0xEF).chr(0xBB).chr(0xBF));
 
-                        // Determine columns: start with common set, then add rest from first row
                         $common = ['payment_method_display','code','status','customer_name','total','created_at'];
                         $first = (array) (($orders[0] ?? []) ?: []);
                         $cols = array_values(array_unique(array_merge($common, array_keys($first))));
@@ -119,7 +176,6 @@ class OrdersController extends Controller
                             foreach ($cols as $c) {
                                 $v = $r[$c] ?? '';
                                 if (is_scalar($v)) {
-                                    // Format amounts
                                     if (in_array($c, ['total','amount','grand_total'], true) && is_numeric($v)) {
                                         $line[] = number_format((float) $v, 2, '.', '');
                                     } else {
@@ -155,7 +211,7 @@ class OrdersController extends Controller
             // Also echo back filters for the view convenience
             'dateFrom' => $request->input('date_from'),
             'dateTo' => $request->input('date_to'),
-            'onlyCompleted' => $request->boolean('only_completed'),
+            'onlyCompleted' => $onlyCompletedEffective,
         ]);
     }
 
